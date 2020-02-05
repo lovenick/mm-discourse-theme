@@ -11,7 +11,10 @@
       "quaternary": "b4bec8",
       "header_background": "22292f",
       "header_primary": "b4bec8",
-      "highlight": "faf089"
+      "highlight": "faf089",
+      "danger": "E53E3E",
+      "success": "38c172",
+      "love": "F687B3"
     }
   }
 }
