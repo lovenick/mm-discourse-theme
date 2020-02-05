@@ -1,13 +1,13 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
 
 $base-font-family: "Montserrat", sans-serif;
-// $font-stack: "Montserrat", sans-serif;
 $border-radius: 0.25rem;
+$btn-text-color: #fff;
 // $media-sm: 500px;
 
-// body {
-//   font-family: $font-stack;
-// }
+html {
+  font-family: $base-font-family;
+}
 
 // .btn {
 //   border-radius: $border-radius;
@@ -53,8 +53,6 @@ $border-radius: 0.25rem;
 // --------------------------------------------------
 // Buttons
 // --------------------------------------------------
-
-$btn-text-color: #fff;
 
 // Base
 // --------------------------------------------------
