@@ -88,9 +88,9 @@
   @include btn(
     $text-color: #fff,
     $bg-color: $tertiary,
-    $icon-color: $secondary,
+    $icon-color: #fff,
     $hover-bg-color: darken($tertiary, 10%),
-    $hover-icon-color: #fff
+    $hover-icon-color: $secondary
   );
 }
 
