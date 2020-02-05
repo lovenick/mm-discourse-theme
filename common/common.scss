@@ -1,9 +1,9 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
 
-$base-font-family: "Montserrat", sans-serif;
+$base-font-family: "Open Sans", sans-serif;
 $border-radius: 0.25rem;
 $btn-text-color: #fff;
-// $media-sm: 500px;
+$media-sm: 500px;
 
 html {
   font-family: $base-font-family;
@@ -310,85 +310,85 @@ html {
 //  Topic Posts
 // *****************************************/
 
-// #topic-title {
-//   margin-bottom: 2rem;
-// }
+#topic-title {
+  margin-bottom: 2rem;
+}
 
-// .topic-body .topic-meta-data {
-//   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-//   margin: 0 -1rem 0.5rem -1rem;
-//   padding: 0 1rem 1rem 1rem;
-//   font-size: 0.9rem;
-// }
+.topic-body .topic-meta-data {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  margin: 0 -1rem 0.5rem -1rem;
+  padding: 0 1rem 1rem 1rem;
+  font-size: 0.9rem;
+}
 
-// .topic-owner .topic-body .topic-meta-data {
-//   margin-left: -0.55rem;
-// }
+.topic-owner .topic-body .topic-meta-data {
+  margin-left: -0.55rem;
+}
 
-// .topic-post {
-//   margin-bottom: 3rem;
-// }
+.topic-post {
+  margin-bottom: 3rem;
+}
 
-// .topic-post .row {
-//   display: flex;
-//   flex-direction: row;
-// }
+.topic-post .row {
+  display: flex;
+  flex-direction: row;
+}
 
-// .topic-post .topic-avatar {
-//   width: 30px;
-//   padding-top: 0;
-//   border-top: none;
-// }
+.topic-post .topic-avatar {
+  width: 30px;
+  padding-top: 0;
+  border-top: none;
+}
 
-// .topic-post .topic-avatar .avatar {
-//   width: 30px;
-//   height: 30px;
-// }
+.topic-post .topic-avatar .avatar {
+  width: 30px;
+  height: 30px;
+}
 
-// @media (min-width: $media-sm) {
-//   .topic-post .topic-avatar {
-//     width: 45px;
-//   }
-//   .topic-post .topic-avatar .avatar {
-//     width: 45px;
-//     height: 45px;
-//   }
-// }
+@media (min-width: $media-sm) {
+  .topic-post .topic-avatar {
+    width: 45px;
+  }
+  .topic-post .topic-avatar .avatar {
+    width: 45px;
+    height: 45px;
+  }
+}
 
-// .topic-post .topic-body {
-//   box-sizing: border-box;
-//   border-top: none;
-//   padding: 1rem;
-//   margin-left: 0.5rem;
-//   background-color: #262d33;
-//   border-radius: $border-radius;
-// }
+.topic-post .topic-body {
+  box-sizing: border-box;
+  border-top: none;
+  padding: 1rem;
+  margin-left: 0.5rem;
+  background-color: #262d33;
+  border-radius: $border-radius;
+}
 
-// @media (min-width: $media-sm) {
-//   .topic-post .topic-body {
-//     margin-left: 1rem;
-//   }
-// }
+@media (min-width: $media-sm) {
+  .topic-post .topic-body {
+    margin-left: 1rem;
+  }
+}
 
-// .topic-owner .topic-body {
-//   border-left: 5px solid #1f9d55;
-//   padding-left: calc(1rem - 5px);
-// }
+.topic-owner .topic-body {
+  border-left: 5px solid #1f9d55;
+  padding-left: calc(1rem - 5px);
+}
 
-// .topic-status-info {
-//   border-top: none;
-// }
+.topic-status-info {
+  border-top: none;
+}
 
-// #topic-footer-buttons {
-//   box-sizing: border-box;
-//   padding: 1rem;
-//   margin-bottom: 2rem;
-//   width: 100%;
-//   background-color: #1d2328;
-//   border-radius: $border-radius;
-// }
+#topic-footer-buttons {
+  box-sizing: border-box;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  width: 100%;
+  background-color: #1d2328;
+  border-radius: $border-radius;
+}
 
-// .suggested-topics-title {
-//   padding-bottom: 0.75rem;
-//   border-bottom: 1px solid #262d33;
-// }
+.suggested-topics-title {
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #262d33;
+}
