@@ -1,6 +1,14 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+
+$font-stack: Montserrat, sans-serif;
+$border-radius: 0.25rem;
+// $media-sm: 500px;
+
 // --------------------------------------------------
 // Buttons
 // --------------------------------------------------
+
+$btn-text-color: $btn-text-color;
 
 // Base
 // --------------------------------------------------
@@ -27,7 +35,7 @@
   text-align: center;
   cursor: pointer;
   transition: all 0.25s;
-  border-radius: 0.25rem;
+  border-radius: $border-radius;
   .d-icon {
     color: $icon-color;
     margin-right: 0.45em;
@@ -86,9 +94,9 @@
 
 .btn-primary {
   @include btn(
-    $text-color: #fff,
+    $text-color: $btn-text-color,
     $bg-color: $tertiary,
-    $icon-color: #fff,
+    $icon-color: $btn-text-color,
     $hover-bg-color: darken($tertiary, 10%),
     $hover-icon-color: $secondary
   );
@@ -99,9 +107,9 @@
 
 .btn-danger {
   @include btn(
-    $text-color: #fff,
+    $text-color: $btn-text-color,
     $bg-color: $danger,
-    $icon-color: #fff,
+    $icon-color: $btn-text-color,
     $hover-bg-color:
       dark-light-choose(
         scale-color($danger, $lightness: -20%),
@@ -116,9 +124,9 @@
 
 .btn.cancel {
   @include btn(
-    $text-color: #fff,
+    $text-color: $btn-text-color,
     $bg-color: $danger,
-    $icon-color: #fff,
+    $icon-color: $btn-text-color,
     $hover-bg-color:
       dark-light-choose(
         scale-color($danger, $lightness: -20%),
@@ -130,9 +138,9 @@
 
 .btn.ok {
   @include btn(
-    $text-color: #fff,
+    $text-color: $btn-text-color,
     $bg-color: $success,
-    $icon-color: #fff,
+    $icon-color: $btn-text-color,
     $hover-bg-color:
       dark-light-choose(
         scale-color($success, $lightness: -20%),
@@ -142,129 +150,246 @@
   );
 }
 
-// Social buttons
-// --------------------------------------------------
+body {
+  font-family: $font-stack;
+}
 
-.btn-social {
-  .d-icon {
-    color: #fff;
+.btn {
+  border-radius: $border-radius;
+}
+
+.nav-pills > li a.active {
+  border-radius: $border-radius;
+}
+
+.list-controls .combo-box .combo-box-header {
+  border-radius: $border-radius;
+}
+
+.bullet > .badge-category-bg {
+  border-radius: 100%;
+}
+
+.bullet > .badge-category-parent-bg {
+  box-sizing: border-box;
+  width: 5px;
+  height: 5px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  z-index: 2;
+}
+
+.badge-wrapper.bullet > .badge-category-parent-bg + .badge-category-bg {
+  box-sizing: border-box;
+  width: 10px;
+  margin-left: -5px;
+  z-index: 1;
+}
+
+@keyframes background-fade-highlight {
+  0% {
+    background-color: #1f9d55;
   }
-  color: #fff;
-  background: #666;
-  &:hover {
-    color: #fff;
-  }
-  &[href] {
-    color: $secondary;
-  }
-  &:before {
-    margin-right: 9px;
-    font-size: $font-0;
-  }
-  &.google_oauth2 {
-    background: $google;
-    color: #333;
-    border: 1px solid $primary-low;
-    // non-FA SVG icon for Google in login-buttons.hbs
-    .d-icon {
-      opacity: 0.9;
-    }
-    &:hover {
-      color: currentColor;
-      background: darken($google, 5%);
-    }
-  }
-  &.instagram {
-    background: $instagram;
-    &:hover {
-      background: darken($instagram, 15%);
-    }
-  }
-  &.facebook {
-    background: $facebook;
-    &:hover {
-      background: darken($facebook, 15%);
-    }
-  }
-  &.cas {
-    background: $cas;
-  }
-  &.twitter {
-    background: $twitter;
-    &:hover {
-      background: darken($twitter, 10%);
-    }
-  }
-  &.github {
-    background: $github;
-    &:hover {
-      background: lighten($github, 20%);
-    }
-  }
-  &.discord {
-    background: $discord;
-    &:hover {
-      background: darken($discord, 10%);
-    }
+  100% {
+    background-color: #262d33;
   }
 }
 
-// Button Sizes
-// --------------------------------------------------
+/****************************************
+ Dashboard Category List
+*****************************************/
 
-// Small
-
-.btn-small {
-  padding: 3px 6px;
-  font-size: $font-down-1;
+.category-list {
+  border-spacing: 0 1rem;
+  border-collapse: separate;
 }
 
-// Large
-
-.btn-large {
-  padding: 9px 18px;
-  font-size: $font-up-1;
-  line-height: $line-height-small;
+.category-list tr {
+  background-color: #262d33;
 }
 
-.btn-flat {
-  background: transparent;
-  border: 0;
-  outline: 0;
-  line-height: $line-height-small;
-  transition: color 0.25s, background 0.25s;
-  .d-icon {
-    color: $primary-low-mid;
+.category-list tr:hover {
+  background-color: #3d4852;
+}
+
+.category-list tr > th {
+  padding: 0.5rem 1.5rem;
+  border-radius: $border-radius;
+}
+
+.category-list tr > td:first-of-type,
+.category-list tr > td {
+  padding: 1.5rem;
+}
+
+.category-list tr > td:first-child {
+  border-top-left-radius: $border-radius;
+  border-bottom-left-radius: $border-radius;
+}
+
+.category-list tr > td:last-child {
+  border-top-right-radius: $border-radius;
+  border-bottom-right-radius: $border-radius;
+}
+
+.latest-topic-list {
+  margin-top: 1rem;
+}
+
+.latest-topic-list .table-heading {
+  background-color: #262d33;
+  padding: 0.5rem 1.5rem;
+  border-radius: $border-radius;
+  border-bottom: none;
+  margin-bottom: 1rem;
+}
+
+.latest-topic-list .latest-topic-list-item {
+  background-color: #262d33;
+  padding: 1.5rem;
+  border-radius: $border-radius;
+  border-bottom: none;
+  margin-bottom: 1rem;
+}
+
+.latest-topic-list .latest-topic-list-item:hover {
+  background-color: #3d4852;
+}
+
+/****************************************
+ Dashboard Post List
+*****************************************/
+
+.topic-statuses {
+  margin-right: 0.5rem;
+}
+
+.topic-list {
+  border-spacing: 0 1rem;
+  border-collapse: separate;
+}
+
+.topic-list tbody {
+}
+
+.topic-list tbody tr {
+}
+
+.topic-list-item {
+  border-bottom: none;
+}
+
+.topic-list-item td:first-of-type {
+  padding: 1.5rem;
+}
+
+.topic-list-item td {
+  padding: 1.5rem;
+  background-color: #262d33;
+}
+
+.topic-list-item td::before,
+.topic-list-item td::after {
+  content: none;
+}
+
+.topic-list-item:hover td {
+  background-color: #3d4852;
+}
+
+.topic-list-item > td:first-child {
+  border-top-left-radius: $border-radius;
+  border-bottom-left-radius: $border-radius;
+}
+
+.topic-list-item > td:last-child {
+  border-top-right-radius: $border-radius;
+  border-bottom-right-radius: $border-radius;
+}
+
+/****************************************
+ Topic Posts
+*****************************************/
+
+#topic-title {
+  margin-bottom: 2rem;
+}
+
+.topic-body .topic-meta-data {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  margin: 0 -1rem 0.5rem -1rem;
+  padding: 0 1rem 1rem 1rem;
+  font-size: 0.9rem;
+}
+
+.topic-owner .topic-body .topic-meta-data {
+  margin-left: -0.55rem;
+}
+
+.topic-post {
+  margin-bottom: 3rem;
+}
+
+.topic-post .row {
+  display: flex;
+  flex-direction: row;
+}
+
+.topic-post .topic-avatar {
+  width: 30px;
+  padding-top: 0;
+  border-top: none;
+}
+
+.topic-post .topic-avatar .avatar {
+  width: 30px;
+  height: 30px;
+}
+
+@media (min-width: $media-sm) {
+  .topic-post .topic-avatar {
+    width: 45px;
   }
-  @include hover {
-    .d-icon {
-      color: $primary;
-    }
-  }
-  &.close {
-    padding: 0;
-    min-height: unset;
-    background: transparent;
-    font-size: $font-up-3;
-    .d-icon {
-      color: $primary-high;
-    }
-    @include hover {
-      background: transparent;
-      .d-icon {
-        color: $primary;
-      }
-    }
+  .topic-post .topic-avatar .avatar {
+    width: 45px;
+    height: 45px;
   }
 }
 
-.btn-link {
-  background: transparent;
-  border: 0;
-  outline: 0;
-  padding: 0;
-  color: $tertiary;
-  &:focus {
-    outline: 1px currentColor dotted;
+.topic-post .topic-body {
+  box-sizing: border-box;
+  border-top: none;
+  padding: 1rem;
+  margin-left: 0.5rem;
+  background-color: #262d33;
+  border-radius: $border-radius;
+}
+
+@media (min-width: $media-sm) {
+  .topic-post .topic-body {
+    margin-left: 1rem;
   }
+}
+
+.topic-owner .topic-body {
+  border-left: 5px solid #1f9d55;
+  padding-left: calc(1rem - 5px);
+}
+
+.topic-status-info {
+  border-top: none;
+}
+
+#topic-footer-buttons {
+  box-sizing: border-box;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  width: 100%;
+  background-color: #1d2328;
+  border-radius: $border-radius;
+}
+
+.suggested-topics-title {
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #262d33;
 }
