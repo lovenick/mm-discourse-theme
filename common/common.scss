@@ -116,9 +116,9 @@
 
 .btn.cancel {
   @include btn(
-    $text-color: $secondary,
+    $text-color: #fff,
     $bg-color: $danger,
-    $icon-color: $secondary,
+    $icon-color: #fff,
     $hover-bg-color:
       dark-light-choose(
         scale-color($danger, $lightness: -20%),
@@ -130,9 +130,9 @@
 
 .btn.ok {
   @include btn(
-    $text-color: $secondary,
+    $text-color: #fff,
     $bg-color: $success,
-    $icon-color: $secondary,
+    $icon-color: #fff,
     $hover-bg-color:
       dark-light-choose(
         scale-color($success, $lightness: -20%),
