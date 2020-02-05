@@ -4,6 +4,9 @@
   "license_url": "",
   "assets": {},
   "color_schemes": {
-    "MakersMob": {}
+    "MakersMob": {
+      "primary": "#8795a1",
+      "secondary": "#22292f"
+    }
   }
 }
