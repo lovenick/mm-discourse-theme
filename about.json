@@ -6,9 +6,9 @@
   "color_schemes": {
     "MakersMob": {
       "primary": "8795a1",
-      "secondary": "b4bec8",
-      "quaternary": "22292f",
-      "header_background": "b4bec8",
+      "secondary": "22292f",
+      "quaternary": "b4bec8",
+      "header_background": "22292f",
       "header_primary": "b4bec8"
     }
   }
