@@ -3,7 +3,9 @@
 $base-font-family: "Open Sans", sans-serif;
 $border-radius: 0.25rem;
 $btn-text-color: #fff;
-$media-sm: 500px;
+// $media-sm: 500px;
+
+@import "./btn.scss";
 
 html {
   font-family: $base-font-family;
@@ -49,150 +51,6 @@ html {
 //     background-color: #262d33;
 //   }
 // }
-
-// --------------------------------------------------
-// Buttons
-// --------------------------------------------------
-
-// Base
-// --------------------------------------------------
-
-@mixin btn(
-  $text-color: $primary,
-  $bg-color: $primary-low,
-  $icon-color: $primary-high,
-  $hover-text-color: $secondary,
-  $hover-bg-color: $primary-medium,
-  $hover-icon-color: $primary-low
-) {
-  display: inline-block;
-  margin: 0;
-  padding: 6px 12px;
-  min-height: 30px;
-  border: none;
-  box-sizing: border-box;
-  font-weight: normal;
-  color: $text-color;
-  background: $bg-color;
-  font-size: $font-0;
-  line-height: $line-height-small;
-  text-align: center;
-  cursor: pointer;
-  transition: all 0.25s;
-  border-radius: $border-radius;
-  .d-icon {
-    color: $icon-color;
-    margin-right: 0.45em;
-    transition: color 0.25s;
-    line-height: $line-height-medium; // Match button text line-height
-  }
-  &.no-text {
-    .d-icon {
-      margin-right: 0;
-    }
-  }
-  @include hover {
-    background: $hover-bg-color;
-    color: $hover-text-color;
-    .d-icon {
-      color: $hover-icon-color;
-    }
-  }
-  &[href] {
-    color: $text-color;
-  }
-  &:active,
-  &.btn-active {
-    @include linear-gradient(
-      scale-color($bg-color, $lightness: -20%),
-      $bg-color
-    );
-  }
-  &[disabled],
-  &.disabled {
-    opacity: 0.4;
-    &:hover {
-      color: $text-color;
-      background: $bg-color;
-      .d-icon {
-        color: $icon-color;
-      }
-    }
-    cursor: not-allowed;
-  }
-}
-
-.btn.hidden {
-  display: none;
-}
-
-// Default button
-// --------------------------------------------------
-
-.btn {
-  @include btn;
-}
-
-// Primary button
-// --------------------------------------------------
-
-.btn-primary {
-  @include btn(
-    $text-color: $btn-text-color,
-    $bg-color: $tertiary,
-    $icon-color: $btn-text-color,
-    $hover-bg-color: darken($tertiary, 10%),
-    $hover-icon-color: $secondary
-  );
-}
-
-// Danger button
-// --------------------------------------------------
-
-.btn-danger {
-  @include btn(
-    $text-color: $btn-text-color,
-    $bg-color: $danger,
-    $icon-color: $btn-text-color,
-    $hover-bg-color:
-      dark-light-choose(
-        scale-color($danger, $lightness: -20%),
-        scale-color($danger, $lightness: 20%)
-      ),
-    $hover-icon-color: $danger-low
-  );
-}
-
-// ✘ and ✔ buttons
-// --------------------------------------------------
-
-.btn.cancel {
-  @include btn(
-    $text-color: $btn-text-color,
-    $bg-color: $danger,
-    $icon-color: $btn-text-color,
-    $hover-bg-color:
-      dark-light-choose(
-        scale-color($danger, $lightness: -20%),
-        scale-color($danger, $lightness: 20%)
-      ),
-    $hover-icon-color: $secondary
-  );
-}
-
-.btn.ok {
-  @include btn(
-    $text-color: $btn-text-color,
-    $bg-color: $success,
-    $icon-color: $btn-text-color,
-    $hover-bg-color:
-      dark-light-choose(
-        scale-color($success, $lightness: -20%),
-        scale-color($success, $lightness: 20%)
-      ),
-    $hover-icon-color: $secondary
-  );
-}
 
 /****************************************
  Dashboard Category List
@@ -310,85 +168,85 @@ html {
 //  Topic Posts
 // *****************************************/
 
-#topic-title {
-  margin-bottom: 2rem;
-}
+// #topic-title {
+//   margin-bottom: 2rem;
+// }
 
-.topic-body .topic-meta-data {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  margin: 0 -1rem 0.5rem -1rem;
-  padding: 0 1rem 1rem 1rem;
-  font-size: 0.9rem;
-}
+// .topic-body .topic-meta-data {
+//   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+//   margin: 0 -1rem 0.5rem -1rem;
+//   padding: 0 1rem 1rem 1rem;
+//   font-size: 0.9rem;
+// }
 
-.topic-owner .topic-body .topic-meta-data {
-  margin-left: -0.55rem;
-}
+// .topic-owner .topic-body .topic-meta-data {
+//   margin-left: -0.55rem;
+// }
 
-.topic-post {
-  margin-bottom: 3rem;
-}
+// .topic-post {
+//   margin-bottom: 3rem;
+// }
 
-.topic-post .row {
-  display: flex;
-  flex-direction: row;
-}
+// .topic-post .row {
+//   display: flex;
+//   flex-direction: row;
+// }
 
-.topic-post .topic-avatar {
-  width: 30px;
-  padding-top: 0;
-  border-top: none;
-}
+// .topic-post .topic-avatar {
+//   width: 30px;
+//   padding-top: 0;
+//   border-top: none;
+// }
 
-.topic-post .topic-avatar .avatar {
-  width: 30px;
-  height: 30px;
-}
+// .topic-post .topic-avatar .avatar {
+//   width: 30px;
+//   height: 30px;
+// }
 
-@media (min-width: $media-sm) {
-  .topic-post .topic-avatar {
-    width: 45px;
-  }
-  .topic-post .topic-avatar .avatar {
-    width: 45px;
-    height: 45px;
-  }
-}
+// @media (min-width: $media-sm) {
+//   .topic-post .topic-avatar {
+//     width: 45px;
+//   }
+//   .topic-post .topic-avatar .avatar {
+//     width: 45px;
+//     height: 45px;
+//   }
+// }
 
-.topic-post .topic-body {
-  box-sizing: border-box;
-  border-top: none;
-  padding: 1rem;
-  margin-left: 0.5rem;
-  background-color: #262d33;
-  border-radius: $border-radius;
-}
+// .topic-post .topic-body {
+//   box-sizing: border-box;
+//   border-top: none;
+//   padding: 1rem;
+//   margin-left: 0.5rem;
+//   background-color: #262d33;
+//   border-radius: $border-radius;
+// }
 
-@media (min-width: $media-sm) {
-  .topic-post .topic-body {
-    margin-left: 1rem;
-  }
-}
+// @media (min-width: $media-sm) {
+//   .topic-post .topic-body {
+//     margin-left: 1rem;
+//   }
+// }
 
-.topic-owner .topic-body {
-  border-left: 5px solid #1f9d55;
-  padding-left: calc(1rem - 5px);
-}
+// .topic-owner .topic-body {
+//   border-left: 5px solid #1f9d55;
+//   padding-left: calc(1rem - 5px);
+// }
 
-.topic-status-info {
-  border-top: none;
-}
+// .topic-status-info {
+//   border-top: none;
+// }
 
-#topic-footer-buttons {
-  box-sizing: border-box;
-  padding: 1rem;
-  margin-bottom: 2rem;
-  width: 100%;
-  background-color: #1d2328;
-  border-radius: $border-radius;
-}
+// #topic-footer-buttons {
+//   box-sizing: border-box;
+//   padding: 1rem;
+//   margin-bottom: 2rem;
+//   width: 100%;
+//   background-color: #1d2328;
+//   border-radius: $border-radius;
+// }
 
-.suggested-topics-title {
-  padding-bottom: 0.75rem;
-  border-bottom: 1px solid #262d33;
-}
+// .suggested-topics-title {
+//   padding-bottom: 0.75rem;
+//   border-bottom: 1px solid #262d33;
+// }
